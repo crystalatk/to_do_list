@@ -2,6 +2,7 @@
 const HTTP = require('http');
 
 const HOSTNAME = '127.0.0.1',
+    session = require('express-session'),
     PORT = 3333;
 
 
