@@ -1,0 +1,26 @@
+{
+  "name": "to_do_list",
+  "version": "1.0.0",
+  "description": "to do list!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "createdb to_do_list",
+    "db:destroy": "dropdb to_do_list",
+    "db:init": "psql -f ./sql/schema.sql to_do_list",
+    "db:seed": "psql -f ./sql/seed.sql to_do_list",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-es6-template-engine": "^2.2.3",
+    "express-session": "^1.17.1",
+    "pg-promise": "^10.9.2"
+  }
+}

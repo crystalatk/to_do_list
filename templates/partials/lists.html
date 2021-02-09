@@ -1,0 +1,17 @@
+<h1>This is the user's list page</h1>
+
+${listObject.map(list => 
+    `<div>
+        <a href="/lists/${list.id}">
+        <p class="title is-4 has-text-white-bis">${list.name}</p>
+        </a>
+    </div>
+    <br>`
+).join('')}
+
+<h3>Want to make a new list?</h3>
+<form action="/lists/newlist${user_id}" method="POST">
+    <label for="addList">Add Another List</label>
+    <input type="text" id="addList" placeholder="list name..." name="name">
+    <button type="submit">+</button>
+</form>

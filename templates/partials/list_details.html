@@ -1,0 +1,14 @@
+<h1>I'm on a list detail page!</h1>
+
+${listData.map(item => 
+    `<div>
+        <p class="title is-4 has-text-white-bis">${item.name}</p>
+    </div>
+    <br>`
+).join('')}
+
+<form action="/lists/newitem${list_id}" method="POST">
+    <label for="addItem">Add Another Item</label>
+    <input type="text" id="addItem" placeholder="item..." name="name">
+    <button type="submit">+</button>
+</form>
